@@ -33,11 +33,20 @@ function runEnter() {
     d3.select("tbody").html("");
 
 
-// Select the input element(datetime) and get the raw HTML node
-    var inputElement = d3.select("#datetime");
+// Select the input element(datetime, country, state, city, chape) and get the raw HTML node
 // Get the value property of the input element (datetime)
-    var inputValue = inputElement.property("value");
-    console.log(inputValue);
+    var dateTime = d3.select("#datetime").property("value");
+    var cCity = d3.select("#city").property("value").toLowerCase();
+    var cCountry = d3.select("#country").property("value").toLowerCase();
+    var sState = d3.select("#state").property("value").toLowerCase();
+    var sShape = d3.select("#shape").property("value").toLowerCase();
+
+
+
+
+
+
+
 
 // Filter reports
     var filteredData = tableData.filter(timeframe => timeframe.datetime === inputValue);
